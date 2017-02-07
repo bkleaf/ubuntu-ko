@@ -31,7 +31,7 @@ VOLUME ["/var/comix","/var/novel","/var/www/","/var/script"]
 ADD script/start.sh /var/script/
 RUN chmod 755 /var/script/start.sh
 
-ADD ./www /var/
+ADD ./www /var/www/
 
 EXPOSE 80
 EXPOSE 31257
@@ -41,4 +41,3 @@ EXPOSE 31000
 CMD ["sh","-c","/var/script/start.sh"]
 #CMD ["/etc/init.d/nginx","start"]
 #CMD ["/etc/init.d/php5-fpm","start"]
-CMD /bin/bash
