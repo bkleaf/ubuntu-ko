@@ -15,7 +15,7 @@ RUN apt-get install -y nginx
 
 RUN rm -f /etc/nginx/sites-available/default 
 #RUN rm -f /etc/nginx/nginx.conf 
-
+ 
 ADD conf/default /etc/nginx/sites-available/
 #ADD conf/nginx.conf /etc/nginx/
 ADD conf/aircomix.conf /etc/nginx/sites-enabled/
