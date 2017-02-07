@@ -33,6 +33,9 @@ RUN chmod 755 /var/script/start.sh
 
 ADD ./www /var/www/
 
+RUN ln -sf /dev/stderr /var/log/nginx/error.log
+RUN ln -sf /dev/stdout /var/log/nginx/access.log
+
 EXPOSE 80
 EXPOSE 31257
 EXPOSE 31357
