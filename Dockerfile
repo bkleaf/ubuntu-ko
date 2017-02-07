@@ -29,9 +29,9 @@ RUN apt-get install -y php5-fpm
 VOLUME ["/var/comix","/var/novel","/var/www/","/var/script"]
 
 ADD script/start.sh /var/script/
-RUN chmod -R 755 /var/script/
+RUN chmod 755 /var/script/start.sh
 
-COPY ./www/* /var/www/
+ADD ./www /var/
 
 EXPOSE 80
 EXPOSE 31257
