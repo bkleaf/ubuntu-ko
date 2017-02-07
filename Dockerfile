@@ -11,6 +11,10 @@ ENV LANG ko_KR.UTF-8
 ENV LANGUAGE ko_KR.UTF-8
 ENV LC_ALL ko_KR.UTF-8
 
+#time 설정
+RUN mv /etc/localtime /etc/localimte_origin
+RUN ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
 RUN apt-get install -y nginx
 
 RUN rm -f /etc/nginx/sites-available/default 
@@ -25,7 +29,7 @@ RUN apt-get install -y php5-fpm
 VOLUME ["/var/comix","/var/novel","/var/www/","/var/script"]
 
 ADD script/start.sh /var/script/
-RUN chmod 755 /var/script/start.sh
+RUN chmod -R 755 /var/script/
 
 COPY ./www/* /var/www/
 
