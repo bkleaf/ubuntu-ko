@@ -41,4 +41,4 @@ EXPOSE 31000
 CMD ["sh","-c","/var/script/start.sh"]
 #CMD ["/etc/init.d/nginx","start"]
 #CMD ["/etc/init.d/php5-fpm","start"]
-#CMD /bin/bash
+CMD /bin/bash
