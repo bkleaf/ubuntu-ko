@@ -20,19 +20,21 @@ ADD conf/default /etc/nginx/sites-available/
 #ADD conf/nginx.conf /etc/nginx/
 ADD conf/aircomix.conf /etc/nginx/sites-enabled/
 ADD conf/airnovel.conf /etc/nginx/sites-enabled/
+ADD conf/comixviewer.conf /etc/nginx/sites-enabled/
 
 RUN apt-get install -y php5-fpm
 
-VOLUME ["/var/comix","/var/novel","/var/www/comix","/var/www/novel","/var/script"]
+VOLUME ["/var/comix","/var/novel","/var/www/","/var/script"]
 
-#ADD script/start.sh /var/script/
-#RUN chmod 755 /var/script/start.sh
+ADD script/start.sh /var/script/
+RUN chmod 755 /var/script/start.sh
 
 EXPOSE 80
 EXPOSE 31257
 EXPOSE 31357
+EXPOSE 31000
 
-#CMD ["/bin/bash","/var/script/start.sh"]
-CMD ["/etc/init.d/nginx","start"]
-CMD ["/etc/init.d/php5-fpm","start"]
-CMD /bin/bash
+CMD ["sh","-c","/var/script/start.sh"]
+#CMD ["/etc/init.d/nginx","start"]
+#CMD ["/etc/init.d/php5-fpm","start"]
+#CMD /bin/bash
