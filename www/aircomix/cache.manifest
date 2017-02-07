@@ -1,0 +1,10 @@
+CACHE MANIFEST
+#V 20140214090346
+
+CACHE:
+images/next.png
+images/prev.png
+images/progress.gif
+
+NETWORK:
+*

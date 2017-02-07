@@ -1,0 +1,143 @@
+#MainLoader
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow: visible;
+	background: #ffffff;
+	display: none;
+	opacity: 0.9;
+	z-index: 101;
+}
+
+.loaderInfo
+{
+	position: absolute;
+	width: 100%;
+	bottom: 25%;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 2em;
+}
+
+
+#Login table, .System table
+{
+    padding: 0px 0px 0px 0px;
+    border: none;
+    border-collapse: collapse;
+}
+
+#Login td, .System td
+{
+    position: relative; /* required by placeholder plugin (used for IE) */
+    padding: 0px 2px 0px 0px;
+    height: 22px;   /* subpixel problem if top padding is used */
+    vertical-align: top;
+}
+
+#LoginPage > .window > #Login {
+   position: relative;
+    top: 25%;
+    left: 40%;
+    display: inline-block;
+
+	margin-top: 90px;
+    border: 1px solid;
+    border-color: #575757;
+
+    background: #f0f0f0;
+    color: #000000;
+    text-align: center;
+}
+
+
+#LoginPage > .window > #LoginLoader
+{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	overflow: visible;
+	background: #ffffff;
+	display: none;
+	z-index: 1;
+}
+
+.window {
+	margin: 0 auto;
+}
+
+label {
+  clear: left;
+  float: left;
+  width: 5em;
+  text-align: right;
+  margin-right: .5em;
+}
+
+input {
+	font-size: 1em !important;
+    display: block;
+    background-color: #ccccff;
+}
+
+input[data-type="system_username"], input[data-type="system_password"]
+{
+    min-width: 329px !important;
+    max-width: 329px !important;
+}
+
+input[type=button], input[type=submit]
+{
+	cursor: pointer;
+	position : relative;
+	margin : 0 auto;
+}
+
+#PicturePage {
+	background-color: black;
+	visibility: hidden;
+}
+
+#container {
+	display:block;
+	text-align: center;
+	margin : 0 auto;
+	overflow:hidden;
+}
+
+.loader
+{
+	width: 100%;
+	height: 100%;
+	background: url(../images/progress.gif) no-repeat center center;
+}
+
+.controls {
+	margin-left:10px;
+	text-align: center;
+}
+
+.controls img{
+	cursor:pointer;
+	margin:0px;
+}
+
+.controls > #ImageTitle {
+	float:right;
+	width: 30%;
+	text-align: right;	
+	margin-top: 8px;
+	margin-right: 0.5em;
+	font-size: 1.3em;
+	color: white;
+}
+
+.controls > #Loading {
+	float:left;
+	margin-top: 8px;
+}

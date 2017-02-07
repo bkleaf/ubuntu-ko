@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="EN" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Manga - Air Comix Web Client</title>
+
+  <meta http-equiv="content-type" content="text/xml; charset=utf-8" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+<!--
+Manga - Air Comix Web Client
+Copyright (C) 2013 - 2016
+    Lee Dong Woo <choco529@naver.com>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as
+published by the Free Software Foundation, either version 3 of the
+License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program. If not, see <http://www.gnu.org/licenses/>.
+-->	
+  <link rel="stylesheet" href="css/default.css" type="text/css" />
+  <script src="cache_handler.js" type="text/javascript"></script>
+  <script src ="lib/jquery-1.9.1.min.js" type = "text/javascript"></script>
+  <script src ="lib/dragscrollable.js" type = "text/javascript"></script>
+  <script src="config.js" type="text/javascript"></script>
+  <script src="main.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="MainLoader">
+		<div id="MainLoaderInner" class="loaderInfo">Loading ...</div>
+		<div class="loader"></div>
+	</div>
+	<div id="LoginPage">
+       <div class = "window">
+		 <div id="Login">
+           <form onsubmit="login(); return false;">
+             <table>
+                <tr>
+                    <td><img data-type="system_logo" src="images/logo.png" alt="Logo" /></td>
+                </tr>
+				<tr>
+					<td><input data-type="system_username" type="text" placeholder="Login"/></td>
+				</tr>
+				<tr>
+					<td><input data-type="system_password" type="password" placeholder="Password"/></td>
+				</tr>			 
+                <tr>
+					<td><input data-type="system_login" type="submit" value="Login" /></td>
+                </tr>
+			 </table>
+           </form>
+		  </div>
+		  <div id="LoginLoader">
+			 <div class="loader"></div>
+		  </div>
+       </div>
+	</div>
+
+	<div id="ListPage"> 
+		<ul id="TitleList"></ul>
+	</div>
+	<div id="PicturePage">
+		<div id="container">
+			<img src="" id="Picture" />
+		</div>
+          <div id="navi">
+		   <div class="controls">
+			  <img src="images/loading.gif" id="Loading" alt="Loading..."/>
+			  <img src="images/exitbtn.png" id="Exit" alt="Exit to Menu"/>
+			  <img src="images/zoomin.png" id="ZoomIn" alt="Zoom In"/>
+			  <img src="images/zoomout.png" id="ZoomOut" alt="Zoom Out"/>
+			  <img src="images/prev.png" id="Prev" alt="Previous"/>
+              <img src="images/next.png" id="Next" alt="Next" />
+              <img src="images/normdir.png" id="Direct" alt="Read Direction" />
+			  <div id="ImageTitle"></div>
+           </div>
+          </div>
+	   </div>
+	</div>
+</body>
+</html>

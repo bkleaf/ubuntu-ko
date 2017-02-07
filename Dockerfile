@@ -19,8 +19,6 @@ RUN rm -f /etc/nginx/sites-available/default
 ADD conf/default /etc/nginx/sites-available/
 #ADD conf/nginx.conf /etc/nginx/
 ADD conf/aircomix.conf /etc/nginx/sites-enabled/
-ADD conf/airnovel.conf /etc/nginx/sites-enabled/
-ADD conf/comixviewer.conf /etc/nginx/sites-enabled/
 
 RUN apt-get install -y php5-fpm
 
@@ -28,6 +26,8 @@ VOLUME ["/var/comix","/var/novel","/var/www/","/var/script"]
 
 ADD script/start.sh /var/script/
 RUN chmod 755 /var/script/start.sh
+
+COPY ./www/* /var/www/
 
 EXPOSE 80
 EXPOSE 31257
