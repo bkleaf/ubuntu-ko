@@ -2,7 +2,7 @@ FROM ubuntu:14.04
  			 
 RUN apt-get -y update
 
-RUN apt-get install  -y language-pack-ko
+RUN apt-get install -y language-pack-ko
 			 
 # set locale ko_KR
 RUN locale-gen ko_KR.UTF-8
@@ -11,7 +11,7 @@ ENV LANG ko_KR.UTF-8
 ENV LANGUAGE ko_KR.UTF-8
 ENV LC_ALL ko_KR.UTF-8
 
-#time 설정
+#set time seoul
 RUN mv /etc/localtime /etc/localimte_origin
 RUN ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
@@ -33,14 +33,9 @@ RUN chmod 755 /var/script/start.sh
 
 ADD ./www /var/www/
 
-RUN ln -sf /dev/stderr /var/log/nginx/error.log
-RUN ln -sf /dev/stdout /var/log/nginx/access.log
-
 EXPOSE 80
 EXPOSE 31257
 EXPOSE 31357
 EXPOSE 31000
 
 CMD ["sh","-c","/var/script/start.sh"]
-#CMD ["/etc/init.d/nginx","start"]
-#CMD ["/etc/init.d/php5-fpm","start"]
